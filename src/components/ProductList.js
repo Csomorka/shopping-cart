@@ -1,18 +1,15 @@
+import { useProducts } from "../Context/ProductsContext";
 import Product from "./Product";
 
-function ProductList({ products, handleClick, add, takeaway }) {
+function ProductList() {
+  const { products } = useProducts();
+
   return (
     <div>
       <h1>Desserts</h1>
       <div className="products">
         {products.map((product) => (
-          <Product
-            product={product}
-            key={product.name}
-            handleClick={handleClick}
-            add={add}
-            takeaway={takeaway}
-          />
+          <Product product={product} key={product.name} />
         ))}
       </div>
     </div>

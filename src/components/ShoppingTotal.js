@@ -1,6 +1,9 @@
+import { useProducts } from "../Context/ProductsContext";
 import Button from "./Button";
 
-function ShoppingTotal({ products, total, handleOperation }) {
+function ShoppingTotal({ handleOperation }) {
+  const { products, total } = useProducts();
+
   return (
     <div className="cart">
       <p>

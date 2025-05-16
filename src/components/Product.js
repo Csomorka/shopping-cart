@@ -1,8 +1,10 @@
+import { useProducts } from "../Context/ProductsContext";
 import AddToCart from "./AddToCart";
 import Button from "./Button";
 
-function Product({ product, handleClick, add, takeaway }) {
-  const { name, image, price, id, amount } = product;
+function Product({ product }) {
+  const { takeaway, add } = useProducts();
+  const { name, image, price, amount } = product;
   const { desktop } = image;
 
   return (
@@ -10,7 +12,7 @@ function Product({ product, handleClick, add, takeaway }) {
       <img alt={name} src={"../" + desktop} />
 
       {!product.isClicked ? (
-        <AddToCart id={product.id} handleClick={handleClick} />
+        <AddToCart id={product.id} />
       ) : (
         <div className="btn">
           <Button id={product.id} handleOperation={takeaway}>
