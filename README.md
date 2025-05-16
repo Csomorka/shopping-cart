@@ -11,10 +11,9 @@ This is a basic shopping cart app built with React. It fetches products from a m
 
 ## 🧪 Tech Stack
 
-- React (with useReducer)
+- React (with useReducer, Context API)
 - Mock JSON Server (`http://localhost:3001`)
 - Functional components
-- Prop drilling (Context API planned)
 
 ## 🚧 Status
 
